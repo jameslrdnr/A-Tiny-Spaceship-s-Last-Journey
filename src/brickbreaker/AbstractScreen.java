@@ -162,7 +162,6 @@ public abstract class AbstractScreen extends JPanel implements KeyListener, Mous
     
     public void killScreen(){
         setVisible(false);
-        
     }
     
     //all the weird behind the scenes graphics stuff
@@ -175,7 +174,7 @@ public abstract class AbstractScreen extends JPanel implements KeyListener, Mous
         if(back == null)
             back = (BufferedImage)(createImage(getWidth(),getHeight()));
         //creates graphics pointer to image in memory
-	Graphics2D gMemory = back.createGraphics();
+	    Graphics2D gMemory = back.createGraphics();
         //clears screen
         gMemory.setColor(Color.BLACK);
         gMemory.fillRect(0,0,getWidth(),getHeight());
@@ -248,8 +247,11 @@ public abstract class AbstractScreen extends JPanel implements KeyListener, Mous
     
     @Override
     public void keyPressed(KeyEvent ke){
-        if(getDumpList().contains(ke.getKeyCode()) == false)
+        System.out.println("Key Pressed");
+        if(getDumpList().contains(ke.getKeyCode()) == false) {
             getDumpList().add(ke.getKeyCode());
+        }
+
     }
     
     @Override

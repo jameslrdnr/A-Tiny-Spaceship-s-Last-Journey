@@ -55,10 +55,10 @@ public class BasicMissleScreenObject extends AbstractScreenObject{
     public void init(){
         
         damage = defaultDamage;
-        setSpeed(2.5f);
-        setMaxTurnSpeed(2.5f);
+        setSpeed(4.0f);
+        setMaxTurnSpeed(3.5f);
         lifeTime = 360;
-        acceleration = .05f;
+        acceleration = .1f;
         cumulativeDX = 0;
         cumulativeDY = 0;
         

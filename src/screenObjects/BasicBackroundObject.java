@@ -153,29 +153,29 @@ public class BasicBackroundObject extends AbstractScreenObject{
 
     @Override
     public void drawObject(Graphics2D g) {
-        
+
         if(options.getProperty("asteroidsOnOff").equals("on")){
-        
-        Color gameC = g.getColor();
-        
-        g.setColor(getColor());
-        for(BasicBrickObject[] slice : dimensions){
-            for(BasicBrickObject piece : slice){
-                if(piece.getIsVisible())
-                    piece.drawObject(g);
+
+            Color gameC = g.getColor();
+
+            g.setColor(getColor());
+            for(BasicBrickObject[] slice : dimensions){
+                for(BasicBrickObject piece : slice){
+                    if(piece.getIsVisible())
+                        piece.drawObject(g);
+                }
             }
+
+            if(Debug.isEnabled()){
+                if(isCollision())
+                    g.setColor(Color.GREEN);
+                else
+                    g.setColor(Color.RED);
+                g.draw(getCollisionShape());
+                g.fillRect((int)getX(), (int)getY(), 5, 5);
+            }
+
         }
-        
-        if(Debug.isEnabled()){
-            if(isCollision())
-                g.setColor(Color.GREEN);
-            else
-                g.setColor(Color.RED);
-            g.draw(getCollisionShape());
-            g.fillRect((int)getX(), (int)getY(), 5, 5);
-        }
-        
-    }
     }
 
     @Override

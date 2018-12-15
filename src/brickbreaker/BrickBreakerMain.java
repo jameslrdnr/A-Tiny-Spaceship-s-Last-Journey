@@ -23,8 +23,8 @@ public class BrickBreakerMain extends JFrame {
     //CONSTANTS
     //------------------------------------------------------------------
     
-    private static final String OPTIONSFILE = "src\\assets\\options.properties";
-    private static final String BGMUSICFILE = "src\\assets\\Theme.wav";
+    private static final String OPTIONSFILE = "./src/assets/options.properties";
+    private static final String BGMUSICFILE = "./src/assets/Theme.wav";
     
     public static final int SCREENWIDTH = 800;
     public static final int SCREENHEIGHT = 600;
@@ -182,7 +182,7 @@ public class BrickBreakerMain extends JFrame {
                 g = currentScreen.getGraphics();
                 currentScreen.requestFocusInWindow();
             }
-            
+            //System.out.println();
         }
         
         /*
@@ -207,7 +207,7 @@ public class BrickBreakerMain extends JFrame {
         
     }
     
-    //other inmportant methods
+    //other important methods
     //------------------------------------------------------------------
     
     

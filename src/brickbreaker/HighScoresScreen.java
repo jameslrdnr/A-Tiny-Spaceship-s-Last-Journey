@@ -32,7 +32,7 @@ public class HighScoresScreen extends AbstractScreen implements Comparator<Strin
     //Constants
     //------------------------------------------------------------------
     private final int maxNameSize = 7;
-    private final String fileName = "src\\assets\\HighScoresFile";
+    private final String fileName = "./src/assets/HighScoresFile";
     private Font highScoresTitleFont = new Font(Font.MONOSPACED, Font.BOLD, 48);
     private Font highScoresFont = new Font(Font.MONOSPACED, Font.BOLD, 24);
     

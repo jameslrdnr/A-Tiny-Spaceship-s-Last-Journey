@@ -130,22 +130,43 @@ public class PlayScreen extends AbstractScreen {
         //create all the pieces themselves
         setCurrentChunkGenType("random");
 
-        cubeSpawnRate = .007f;
-        if(options.getProperty("difficulty").equals("Easy")){
-        basicEnemySpawnRate = 200.0;
+
+        if(options.getProperty("difficulty").equals("easy")){
+            basicEnemySpawnRate = 200.0;
+            cubeSpawnRate = .0035f;
+            healthPickupSpawnRate = .001;
+            pointPickupSpawnRate = .001;
+            threeShotPickupSpawnRate = .001;
         }
-        if(options.getProperty("difficulty").equals("Medium")){
-        basicEnemySpawnRate = 150.0;
+        if(options.getProperty("difficulty").equals("medium")){
+            basicEnemySpawnRate = 150.0;
+            cubeSpawnRate = .004f;
+            healthPickupSpawnRate = .0008;
+            pointPickupSpawnRate = .002;
+            threeShotPickupSpawnRate = .001;
         }
-        if(options.getProperty("difficulty").equals("Hard")){
-        basicEnemySpawnRate = 100.0;
+        if(options.getProperty("difficulty").equals("hard")){
+            basicEnemySpawnRate = 100.0;
+            cubeSpawnRate = .005f;
+            healthPickupSpawnRate = .001;
+            pointPickupSpawnRate = .005;
+            threeShotPickupSpawnRate = .001;
         }
-        if(options.getProperty("difficulty").equals("Insane")){
-        basicEnemySpawnRate = 30.0;
+        if(options.getProperty("difficulty").equals("insane")){
+            basicEnemySpawnRate = 30.0;
+            cubeSpawnRate = .006f;
+            healthPickupSpawnRate = .001;
+            pointPickupSpawnRate = .008;
+            threeShotPickupSpawnRate = .001;
+        }   else{
+            System.out.println("This is the default difficulty. Nothing has been initialized as there has been an error reading options");
+            basicEnemySpawnRate = 300.0;
+            cubeSpawnRate = .002f;
+            healthPickupSpawnRate = .004;
+            pointPickupSpawnRate = .0001;
+            threeShotPickupSpawnRate = .002;
         }
-        healthPickupSpawnRate = .001;
-        pointPickupSpawnRate = .001;
-        threeShotPickupSpawnRate = .001;
+
         
         //spawn backround stars
         if(options.getProperty("starsOnOff").equals("on")){
@@ -245,6 +266,8 @@ public class PlayScreen extends AbstractScreen {
     void runLogic() {
 
         //input
+        System.out.println(isFocusOwner());
+        grabFocus();
         delayInputManager();
         handleInput(getInputList());
 
@@ -549,10 +572,9 @@ public class PlayScreen extends AbstractScreen {
 
         //pass input to screen objects and debug
         getDebug().inputHandler(getInputMethod(), inputList, getInputMethodRemove(), inputListReleased);
-        
+
         //pause menu input
         if (!isPaused()) {
-
             for (ArrayList<AbstractScreenObject> list : getObjectsList()) {
                 for (AbstractScreenObject ob : list) {
                     ob.inputHandler(getInputMethod(), inputList, getInputMethodRemove(), inputListReleased);

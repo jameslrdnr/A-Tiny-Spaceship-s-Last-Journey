@@ -46,6 +46,8 @@ public class PlayerScreenObject extends AbstractScreenObject {
     
     //sets movement multiplier
     private float speed;
+
+    private int counter;
     
     //color used to draw player
     private Color playerColor;
@@ -231,8 +233,8 @@ public class PlayerScreenObject extends AbstractScreenObject {
         getParticleSys().move();
         
        }
-    
-    
+
+
         @Override
     public void handleInput(String inputMethod, ArrayList<Integer> inputList, String inputMethodRemove, ArrayList<Integer> inputListReleased) {
 
