@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c9c805d4-cfa6-4f46-b010-22407a7685b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/HighScoresFile" afterPath="$PROJECT_DIR$/src/assets/HighScoresFile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/assets/options.properties" afterPath="$PROJECT_DIR$/src/assets/options.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickbreaker/AbstractScreen.java" afterPath="$PROJECT_DIR$/src/brickbreaker/AbstractScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickbreaker/BrickBreakerMain.java" afterPath="$PROJECT_DIR$/src/brickbreaker/BrickBreakerMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickbreaker/HighScoresScreen.java" afterPath="$PROJECT_DIR$/src/brickbreaker/HighScoresScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/brickbreaker/PlayScreen.java" afterPath="$PROJECT_DIR$/src/brickbreaker/PlayScreen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screenObjects/BasicBackroundObject.java" afterPath="$PROJECT_DIR$/src/screenObjects/BasicBackroundObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screenObjects/BasicMissleScreenObject.java" afterPath="$PROJECT_DIR$/src/screenObjects/BasicMissleScreenObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/screenObjects/PlayerScreenObject.java" afterPath="$PROJECT_DIR$/src/screenObjects/PlayerScreenObject.java" />
-    </list>
+    <list default="true" id="c9c805d4-cfa6-4f46-b010-22407a7685b4" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -342,12 +330,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544744632542</updated>
-      <workItem from="1544744633856" duration="9614000" />
+      <workItem from="1544744633856" duration="9758000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9614000" />
+    <option name="totallyTimeSpent" value="9758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
