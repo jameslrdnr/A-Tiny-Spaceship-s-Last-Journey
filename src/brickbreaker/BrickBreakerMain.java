@@ -182,7 +182,6 @@ public class BrickBreakerMain extends JFrame {
                 g = currentScreen.getGraphics();
                 currentScreen.requestFocusInWindow();
             }
-            //System.out.println();
         }
         
         /*

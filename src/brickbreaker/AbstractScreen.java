@@ -197,8 +197,6 @@ public abstract class AbstractScreen extends JPanel implements KeyListener, Mous
         int nX, nY;
         nX = x - (metrics.stringWidth(str) / 2);
         nY = y + (metrics.getHeight() / 2);
-        
-        
         g.drawString(drawString, nX, nY);
         
     }
@@ -247,7 +245,6 @@ public abstract class AbstractScreen extends JPanel implements KeyListener, Mous
     
     @Override
     public void keyPressed(KeyEvent ke){
-        System.out.println("Key Pressed");
         if(getDumpList().contains(ke.getKeyCode()) == false) {
             getDumpList().add(ke.getKeyCode());
         }

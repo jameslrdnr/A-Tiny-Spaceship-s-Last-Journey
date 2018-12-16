@@ -136,6 +136,7 @@ public class PlayerScreenObject extends AbstractScreenObject {
         mouseX = 0f;
         mouseY = 0f;
         movingDiag = false;
+        missileAmmo = 3;
 
         //option read from options property file
         String colorText = BrickBreakerMain.getOptions().getProperty("playerColor");
@@ -395,12 +396,7 @@ public class PlayerScreenObject extends AbstractScreenObject {
         degreesToRotate = mouseDegrees - currentDegreesRotated;
     }
 
-    @Override
-    public void drawObject(Graphics2D g) {
-
-        //Set initial values
-        //------------------------------------------------------------------
-        Color gameColor = g.getColor();
+    public void playerColorManager(){
         if (isPlayerColorFade) {
             if (playerColor.getRed() >= 255) {
                 rFade = -1;
@@ -433,7 +429,16 @@ public class PlayerScreenObject extends AbstractScreenObject {
             }
             colorTimer = 0;
         }
+    }
 
+    @Override
+    public void drawObject(Graphics2D g) {
+
+        //Set initial values
+        //------------------------------------------------------------------
+        Color gameColor = g.getColor();
+
+        playerColorManager();
         
         g.setColor(playerColor);
         g.fill(getMyShape());
@@ -573,7 +578,7 @@ public class PlayerScreenObject extends AbstractScreenObject {
     }
     
     public Boolean canShootMissile(){
-        return missileShootTimer >= missileShootTime;
+        return missileShootTimer >= missileShootTime && missileAmmo > 0;
 }
     
 }

@@ -266,8 +266,6 @@ public class PlayScreen extends AbstractScreen {
     void runLogic() {
 
         //input
-        System.out.println(isFocusOwner());
-        grabFocus();
         delayInputManager();
         handleInput(getInputList());
 
@@ -352,15 +350,7 @@ public class PlayScreen extends AbstractScreen {
                     BasicEnemyBulletScreenObject bullet = (BasicEnemyBulletScreenObject) getObjectsList().get(SCREENOBJLAYER).get(i);
                     if (bullet.testBoundingIntersection(player.getCollisionShape())) {
                         if (bullet.testIntersection(player.getCollisionShape())) {
-                            ((PlayerScreenObject) player).changeHealth(-bullet.getDamage());
-                            bullet.setHasHit(true);
-                            BasicParticleSystem ps = new BasicParticleSystem(player.getX() + player.getWidth() / 2, player.getY() + player.getHeight() / 2, 3, 3, 6f, 0f, 0, 0);
-                            ps.setDegrees(DOWN);
-                            ps.setSpeed(screenScrollSpeed);
-                            ps.setDeltaYModifier(screenScrollSpeed);
-                            ps.setInheritInertia(true);
-                            ps.createParticles(60, 8, 3, 3, .5f, 0, 1f, true, explosionColors);
-                            getObjectsList().get(SCREENOBJLAYER).add(ps);
+                            playerHitByEnemyBullet(bullet);
                         }
                     }
                 }
@@ -992,6 +982,18 @@ public class PlayScreen extends AbstractScreen {
 
     public void setScore(double score) {
         this.score = score;
+    }
+
+    public void playerHitByEnemyBullet(BasicEnemyBulletScreenObject bullet){
+        ((PlayerScreenObject) player).changeHealth(-bullet.getDamage());
+        bullet.setHasHit(true);
+        BasicParticleSystem ps = new BasicParticleSystem(player.getX() + player.getWidth() / 2, player.getY() + player.getHeight() / 2, 3, 3, 6f, 0f, 0, 0);
+        ps.setDegrees(DOWN);
+        ps.setSpeed(screenScrollSpeed);
+        ps.setDeltaYModifier(screenScrollSpeed);
+        ps.setInheritInertia(true);
+        ps.createParticles(60, 8, 3, 3, .5f, 0, 1f, true, explosionColors);
+        getObjectsList().get(SCREENOBJLAYER).add(ps);
     }
 
 }
